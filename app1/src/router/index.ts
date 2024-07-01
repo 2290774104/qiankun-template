@@ -15,6 +15,11 @@ const routers: Array<RouteConfig> = [
     path: '/',
     name: 'Index',
     component: () => import('@/views/Index.vue')
+  },
+  {
+    path: '/nextPage',
+    name: 'NextPage',
+    component: () => import('@/views/NextPage.vue')
   }
 ];
 
@@ -37,8 +42,9 @@ const createRouter = () =>
         return { x: 0, y: 0 };
       }
     },
-    base: process.env.BASE_URL,
-    routes: routers
+    base: process.env.VUE_APP_BASE_URL,
+    routes: routers,
+    mode: 'history'
   });
 
 const router = createRouter();

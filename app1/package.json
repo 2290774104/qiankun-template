@@ -1,5 +1,5 @@
 {
-  "name": "vue2-template",
+  "name": "app1",
   "version": "0.1.0",
   "description": "vue2项目模板",
   "author": {
@@ -10,8 +10,9 @@
   "repository": "github.com:2290774104/vue2-template",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "dev": "vue-cli-service serve",
+    "dev:micro": "vue-cli-service serve --mode micro",
+    "build": "vue-cli-service build --mode micro",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
     "svg": "vsvg -s ./src/icons/svg -t ./src/icons/components --ext ts --es6"
@@ -19,6 +20,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "core-js": "^3.8.3",
+    "element-ui": "^2.15.14",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "lodash": "^4.17.21",

@@ -19,6 +19,7 @@
     "@ant-design/icons-vue": "^7.0.1",
     "ant-design-vue": "4.x",
     "pinia": "^2.1.7",
+    "qiankun": "^2.10.16",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },

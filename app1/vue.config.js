@@ -1,11 +1,24 @@
 const { defineConfig } = require('@vue/cli-service');
+const packageName = require('./package.json').name;
 const path = require('path');
 module.exports = defineConfig({
   lintOnSave: false,
-  publicPath: './',
+  publicPath: process.env.VUE_APP_BASE_URL,
+  devServer: {
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    }
+  },
   configureWebpack: {
     resolve: {
       extensions: ['.js', '.ts', '.vue', '.json']
+    },
+    output: {
+      library: `${packageName}`,
+      libraryTarget: 'umd',
+      // jsonpFunction: `webpackJsonp_${packageName}`,
+      // filename: `[name].[hash].js`,
+      // chunkFilename: `[name].[hash].js`
     }
   },
   transpileDependencies: ['vuex-module-decorators'],

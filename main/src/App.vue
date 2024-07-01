@@ -76,4 +76,8 @@ const handleClick: MenuProps['onClick'] = (e) => {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+#microApp {
+  overflow-y: auto;
+}
+</style>
