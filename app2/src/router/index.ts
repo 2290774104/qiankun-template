@@ -10,9 +10,16 @@ const routes: Array<RouteConfig> = [
     name: 'Index',
     component: () => import('@/views/HomeView.vue'),
   },
+  {
+    path: '/next',
+    name: 'NextView',
+    component: () => import('@/views/NextView.vue')
+  }
 ];
 
 const router = new VueRouter({
+  mode: 'history',
+  base: import.meta.env.VITE_APP_BASE_URL,
   routes,
 });
 

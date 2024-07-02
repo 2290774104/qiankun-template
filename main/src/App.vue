@@ -20,7 +20,6 @@
 <script lang="ts" setup>
 import { ref, type CSSProperties, VueElement, reactive } from 'vue'
 import type { ItemType, MenuProps } from 'ant-design-vue'
-import router from './router'
 
 const layoutStyle: CSSProperties = {
   height: '100%'
@@ -61,7 +60,7 @@ const items: ItemType[] = reactive([
       'Vue',
       'vue',
       null,
-      [getItem('Vue2-1', 'app1'), getItem('Vue2-2', 'app2'), getItem('Vue3+vite+ts', 'app3')],
+      [getItem('Vue2-webpack', 'app1'), getItem('Vue2-vite', 'app2'), getItem('Vue3+vite', 'app3')],
       'group'
     ),
     getItem('React', 'react', null, [getItem('React18', 'app4')], 'group')
@@ -69,10 +68,7 @@ const items: ItemType[] = reactive([
 ])
 
 const handleClick: MenuProps['onClick'] = (e) => {
-  console.log('click', e)
-  router.push({
-    path: `/${e.key}`
-  })
+  window.history.pushState({}, '', `/${e.key}`)
 }
 </script>
 
