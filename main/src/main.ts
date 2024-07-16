@@ -32,6 +32,12 @@ const apps: RegistrableApp<any>[] = [
     container: '#microApp',
     activeRule: '/app2'
   },
+  {
+    name: 'app3',
+    entry: 'http://localhost:8083/app3',
+    container: '#microApp',
+    activeRule: '/app3'
+  },
 ]
 
 const lifeCycles: FrameworkLifeCycles<any> = {

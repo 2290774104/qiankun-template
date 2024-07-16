@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "dev:micro": "vite --mode micro",
+    "build": "run-p type-check \"build-only {@}\" -- --mode micro",
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
@@ -16,7 +17,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "element-plus": "^2.7.7",
     "pinia": "^2.1.7",
+    "vite-plugin-qiankun": "^1.0.15",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
