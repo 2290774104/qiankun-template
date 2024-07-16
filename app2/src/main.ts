@@ -13,11 +13,13 @@ import {
 } from 'vite-plugin-qiankun/dist/helper';
 import type { QiankunProps } from 'vite-plugin-qiankun/dist/helper';
 
-Vue.use(ElementUI)
+Vue.use(ElementUI);
+
+let app: any = null;
 
 const render = (props: QiankunProps) => {
   const { container } = props;
-  new Vue({
+  app = new Vue({
     router,
     render: (h) => h(App),
   }).$mount(container ? container.querySelector('#app')! : '#app');
@@ -29,7 +31,12 @@ renderWithQiankun({
     render(props);
   },
   bootstrap() {},
-  unmount() {},
+  unmount() {
+    if (app) {
+      app.$directive();
+      app = null
+    }
+  },
   update() {},
 });
 
