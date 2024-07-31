@@ -4,6 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "node setup.js",
+    "dev:main": "pnpm -C main dev",
+    "dev:app1": "pnpm -C app1 dev:micro",
+    "dev:app2": "pnpm -C app2 dev:micro",
+    "dev:app3": "pnpm -C app3 dev:micro",
+    "dev:app4": "pnpm -C app4 dev:micro",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
